@@ -30,7 +30,11 @@ Pour commencer, nous allons créer un nouveau projet Spring. Vous pouvez le fair
 
 ##### Ensuite, ajoutez les dépendances suivantes à votre projet :
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/f2459d02-cefb-4e9a-835f-0c094cab10f6)
-
+##### Après avoir créé le projet Spring, nous allons organiser notre application en créant les packages suivants :
+  - Entities : Pour stocker les différentes entités JPA.
+  - Enums : Pour les classes énumérées.
+  - Repositories : Pour les repositories JPA.
+Voici comment notre application va se présenter après la création de ces différents packages :
 
 
 
