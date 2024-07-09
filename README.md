@@ -3,7 +3,7 @@ L'architecture de microservices décompose les applications en petits services i
 
   - REST : Utilise HTTP pour des interactions simples et stateless.
   - GraphQL : Offre des requêtes flexibles en définissant les données nécessaires.
-  - gRPC : Utilise HTTP/2 pour des communications performantes et bidirectionnelles.
+  - GRPC : Utilise HTTP/2 pour des communications performantes et bidirectionnelles.
   - SOAP : Basé sur XML pour des communications sécurisées et transactionnelles.
 
 Ces technologies offrent une flexibilité accrue, facilitent les mises à jour et permettent une scalabilité indépendante de chaque composant.
@@ -27,6 +27,9 @@ Pour commencer, nous allons créer un nouveau projet Spring. Vous pouvez le fair
   - Cliquez sur "Finish" pour créer le projet.
 ###### Remarque : 
   - Il est important de savoir comment créer un projet Spring avec ces deux méthodes.
+
+##### Ensuite, ajoutez les dépendances suivantes à votre projet :
+![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/f2459d02-cefb-4e9a-835f-0c094cab10f6)
 
 
 
