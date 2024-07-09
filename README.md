@@ -1,4 +1,4 @@
-![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/171e8bc3-5317-40be-86b5-599fe565887d)# TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024
+# TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024
 L'architecture de microservices décompose les applications en petits services indépendants. En Java, plusieurs technologies facilitent la communication entre ces services :
 
   - REST : Utilise HTTP pour des interactions simples et stateless.
