@@ -108,12 +108,12 @@ Alors comme on peut le voir, les données de notre compte sont ici sous forme JS
 ==> Cependant, nous rencontrons ici un problème : nous ne traitons pas les cas où l'ID du compte que je veux sauvegarder n'est pas spécifié dans le corps de la requête, ce qui entraîne une exception. Voici cette exception :
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/6c0d53e4-b7af-4347-9480-798b1be2edfe)
 
-    ==> Alors pour resoudre ce petit probleme on effectuer une petit modification dans notre rest Api « save » afin  de faire généré un id dans le cas ou  le id n’est pas spécifier dans le corps  de la requête voici la modification quand on faire : 
+==> Alors, pour résoudre ce petit problème, nous avons effectué une petite modification dans notre API REST "save" afin de générer un ID dans le cas où l'ID n'est pas spécifié dans le corps de la requête. Voici la modification que nous avons apportée :
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/fd6194d1-0c36-4ff6-8868-a1cbe78d919a)
 
-    ==> Apres l’ajoute de cette instruction qui est en réalité c’été l’un des trucs de la couche métier on  a trouver le résultat quand on a : 
+==> Après l'ajout de cette instruction, qui relève en réalité d'un des aspects de la couche métier, voici les résultats obtenus lorsque nous avons : 
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/719f13fc-a5ad-4e4b-b28c-22f62a56cc60)
-Afin de faire enregistrer le donne ,  notre rest Api  il nous a retourné les informations de nouveau compte enregistre .
+Afin d'enregistrer les données, notre API REST nous a retourné les informations du nouveau compte enregistré.
 
 4-	Mise a jours d’un compte : 
 Par exemple je dois changer les information du compte enregistrer :
