@@ -48,67 +48,64 @@ Dans l'architecture, nous avons :
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/5278cb24-1b0d-4ceb-b493-fff198c6a088)
 
 Ensuite, nous avons tenté de configurer notre application dans le fichier application.properties comme suit pour utiliser la base de données H2 :
+![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/d6607bb2-d0e9-42c8-8d12-af161283409b)
+
+Ensuite, nous avons essayé d'ajouter quelques comptes dans notre base de données en créant une fonction qui retourne un objet de type Commande line runner, et nous n'avons pas oublié d'annoter cette fonction avec @Bean, comme suit : 
 ![Uploading image.png…]()
 
-En suite on a essayé d’ajouter quelque compte dans note base de donnée a partie de faire cereer une fonction qui retourne un objet de type Commande line runner et sans oublier de faire noter cette fonction avec la notation @Bean pour  comme suite  : 
-
 Remarque : 
-Dans cette fois je il faut noter que il faut regarder est ce que le Tomcat est bien démarre et dans quel port a été démarré  lorsque on lance  (On démarre) l’application , aussi en peut voir aussi le  temps pour que l’application se démarre tel que dans le cas normal le temps pour qu’un micro service se démarre (le boot d’une application Spring) il va prendre  2, 3  , 4 ou bien 5  secondes et pas plus .
-Mais le plus important c’est que il y a un moyen pour créer des applications native  comme GralVm
-Qui est une solution de IBM on l’utilise comme une solution universel pour faire démarrer une application  dans un temps rapide   (en générale c’est pour faire concevoir des applications natives) .
-Alors jusqu’à maintenant on nous voulons exposions les défirent fonctionnalité de notre micro service pour le monde extérieurs   c’est-à-dire faire connecter notre micro service qui permet au autre front end da faire accéder au micro service 
+Cette fois-ci, il est important de vérifier si Tomcat démarre correctement et sur quel port il est démarré lorsque nous lançons l'application. On peut également observer le temps nécessaire pour que l'application démarre. Normalement, le démarrage d'un microservice Spring prendra entre 2, 3, 4 ou 5 secondes, mais pas plus.
 
-Alors là on a le choix de faire passer via soit : 
-Les Web service basé sur : Soap ,  Wsdl, Rest, GraphQL , GRPC  tout ça c’est en mode synchrone
-Alors ces quatre web service sont appelle aussi des connecteurs.
+Le point crucial est qu'il existe des moyens pour créer des applications natives, comme GralVm d'IBM, une solution universelle permettant un démarrage rapide des applications (généralement utilisée pour concevoir des applications natives).
 
-Dans un permeir temps en va commancer par celui quand vousconnaicez c’est  rest : 
+À ce stade, nous voulons exposer les différentes fonctionnalités de notre microservice au monde extérieur, c'est-à-dire permettre à d'autres frontends d'accéder à notre microservice.
 
- C’est pour cela on va créer un package Web  , dont  laquel on va créer une classe quand on va l’appelé AcountRestController , ici puis ce luis la c’est un web Service RestFul on va utiliser directement l’annotation  @RestController  voici comment on va faire ca :
+Nous avons le choix de passer par les Web services basés sur SOAP, WSDL, REST, GraphQL, et gRPC, tous fonctionnant de manière synchrone. Ces quatre types de Web services sont également appelés connecteurs.
+
+
+Dans un premier temps, nous allons commencer par celui que vous connaissez : REST
+
+C'est pourquoi nous allons créer un package Web, dans lequel nous allons créer une classe appelée AccountRestController. Ici, cette classe représente un service Web RESTful, et nous allons utiliser directement l'annotation @RestController. Voici comment nous allons procéder :
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/b80c128a-7b73-4165-85e3-24b67f6f1ecb)
 
-
-Ici et pour le moment on a pas utilisé la couche DTO  Alors ca c’est une mauvaise pratique mais après on va essayer de  l’intègre (je parle sur la couche DTO)
+Ici, pour le moment, nous n'avons pas utilisé la couche DTO, ce qui est une mauvaise pratique. Cependant, nous prévoyons de l'intégrer ultérieurement dans notre architecture (je parle de la couche DTO).
 
 ###### Remarque : 
-Pour utiliser les services web Rest full il y quelque norme qu’il faut respecter l’un de ces règle et la suivant : 
-Si une rest API permer ,apr exemple de faire recoupere  un liste des bankAccounts il faut soicifier "/bankAccounts" comme URL  avec le s  a la fin comme il est montré dans le code au dessue c’est-à-dire faire utiliser:  @GetMapping("/bankAccounts")
+Pour utiliser les services web RESTful, il y a quelques normes à respecter. L'une de ces règles est la suivante : si une API REST permet par exemple de récupérer une liste de comptes bancaires, il faut spécifier "/bankAccounts" comme URL avec un 's' à la fin, comme illustré dans le code ci-dessus, c'est-à-dire en utilisant @GetMapping("/bankAccounts").
 
 
 ######         Remarque : 
-Je répète une cors une fois que dans Rest les donne par defaut sont en format Json .
-Et faite attentient quand onpose la question :
-Est-ce que on obliger d’utiliser Json ? 
-La réponse est  Non
-Alors par exemple Soap forcement c’est  XML 
-Pour Rest c’est ca dépend de client quand le client en vois la requête http il peut spécifier dans  un header qui s’appel accepte  si  accepte est application json le web service il vous retourne json   , par contre si vous mettez dans ce header application XML il vous retourne le résultat ou ---> Alors pour Rest le client qui choisie comment il veut recevoir les donne a partir de web service soit XML si il a spécifier dans le un header (qui s’appel accepte) que il veut application XML  ou bien JSON si il a choisie dans le header  application JSON
---> Mais généralement c’est le format JSON qui est par défaut  utiliser .
+Je répète, une fois de plus, que dans REST, les données par défaut sont au format JSON. Il est important de noter que lorsque l'on pose la question : 'Est-ce qu'on est obligé d'utiliser JSON ?', la réponse est non. Par exemple, pour SOAP, le format est forcément XML.
 
-Pour GraphQL  lui-même il utlise JSON 
-Pour GRPC il utilisee un protocole qui s’appelle : protocole Buffer tel que ce dernier est boucoups plus réduite que JSON  .
+Pour REST, le format dépend du client. Lorsque le client envoie une requête HTTP, il peut spécifier dans un en-tête appelé 'Accept' le format qu'il préfère recevoir en réponse : s'il spécifie 'application/json', le service web retournera JSON, tandis que s'il spécifie 'application/xml', il recevra XML en réponse.
 
---> Alors  c’est vous voulez  vraiment être dans les performances d’échange  de donne le protocole Buffer  utiliser par GRPC c’est plus réduit , mais on verra que souvent GRPC  généralement n’est pas  utiliser pour la partie front .
---> Alors le GRPC est bien et aussi et plus pratique pour communiquer entre les services backend  par contre en frontend en reste toujours sur JSON car ce lui la est intéressant.
-Alors afin de faire tester notre RestControlleur et comme en a dit que les resulat retourner par ce dernier il vont etre sous forme  json
-En va ajouter une autre Rest API pour faire sauvegarder et un autre pour supprimer et autre pour faire modifier un  bankAccount voici on a fait ca : 
+En général, c'est le format JSON qui est le plus couramment utilisé par défaut.
 
-Alors pour faire tester ca voici les défirent testes quand a fait pour notre restController on utlisant l’outil Postman : 
-1-	La recouperation de toute les compte : 
+Pour GraphQL, il utilise lui-même le format JSON. En revanche, pour gRPC, il utilise un protocole appelé Protocol Buffers, qui est beaucoup plus compact que JSON.
+
+Si vous visez des performances d'échange de données optimales, le protocole Buffer utilisé par gRPC est plus réduit. Cependant, il est souvent observé que gRPC n'est généralement pas utilisé pour les interactions avec la partie frontend.
+
+gRPC est particulièrement efficace et pratique pour la communication entre services backend. En revanche, en frontend, JSON reste largement utilisé en raison de sa simplicité et de sa flexibilité.
+
+Afin de tester notre RestController et comme convenu que les résultats retournés seront sous forme JSON, nous avons ajouté plusieurs autres API REST pour effectuer les opérations suivantes : sauvegarder, supprimer et modifier un compte bancaire. Voici comment nous avons procédé :
+Pour tester ces fonctionnalités avec notre RestController en utilisant l'outil Postman :
+1-  Récupération de tous les comptes : 
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/25b7945b-7bc3-41a8-aac7-bcb86a673fea)
 
-2-	La récupération d’un compte en utilisant le id : 
+2-	Récupération d'un compte en utilisant l'ID : 
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/6ba3498b-7f0e-4391-b73b-906017408948)
   
-3-	L’ajoute d’un compte dans la base de donne : 
-Donc pour faire  ajouter un  compte enutlisant le PostMan au premier lieu il faut specifier : 
-    ==> Dans le champs header comment en veut envoyer et aussi recouper les données  comme suite : 
+3-	Ajout d'un compte dans la base de données : 
+Donc, pour ajouter un compte en utilisant Postman, il est d'abord nécessaire de spécifier :
+==> Dans le champ "Headers" comment nous voulons envoyer et recevoir les données, comme suit :
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/4d22a1e7-9bfa-43a6-a996-033fd1e7c183)
 
---> En suite en va spécifier le cops de la requête c’est-à-dire mettre les données de compte que je veux sauvegarder comme suite dans la partie Body: 
+--> Ensuite, nous spécifierons le corps de la requête, c'est-à-dire nous ajouterons les données du compte que nous voulons sauvegarder dans la partie "Body".
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/d75e08fb-1c44-4ca2-b092-f4d49e4f441b)
 
-Alors comme on vois on a ici les donne de notre compte il sont sous forme Json   
-    ==> Alors on rencontrer ici un seul problème c’est on pas traiter les cas ou le id du compte que je veux sauvegarder n’est pas specifier dans le corps de  la requête et ca il ne lance une exception voici cette exception :  
+Alors comme on peut le voir, les données de notre compte sont ici sous forme JSON.
+
+==> Cependant, nous rencontrons ici un problème : nous ne traitons pas les cas où l'ID du compte que je veux sauvegarder n'est pas spécifié dans le corps de la requête, ce qui entraîne une exception. Voici cette exception :
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/6c0d53e4-b7af-4347-9480-798b1be2edfe)
 
     ==> Alors pour resoudre ce petit probleme on effectuer une petit modification dans notre rest Api « save » afin  de faire généré un id dans le cas ou  le id n’est pas spécifier dans le corps  de la requête voici la modification quand on faire : 
