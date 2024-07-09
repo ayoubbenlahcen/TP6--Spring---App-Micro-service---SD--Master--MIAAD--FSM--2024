@@ -12,3 +12,41 @@ Ces technologies offrent une flexibilité accrue, facilitent les mises à jour e
   - Jusqu'à maintenant, nous avons utilisé Spring MVC classique impératif.
   - Il existe un autre modèle appelé Spring Reactive (Spring WebFlux).
   - Nous verrons par la suite la différence entre eux.
+##### Première étape : Créer un nouveau projet Spring
+Pour commencer, nous allons créer un nouveau projet Spring. Vous pouvez le faire de deux manières : 
+###### Avec Spring Initializr dans Google Chrome :
+  - Rendez-vous sur Spring Initializr.
+  - Configurez votre projet (choisissez les dépendances, le nom du projet, etc.).
+  - Cliquez sur "Generate" pour télécharger le projet.
+  - Importez le projet téléchargé dans votre IDE, comme IntelliJ.
+###### Avec Start.Spring.Ayou sous IntelliJ :
+  - Ouvrez IntelliJ.
+  - Allez dans "File" > "New" > "Project".
+  - Sélectionnez "Spring Initializr" et configurez votre projet.
+  - Cliquez sur "Next" et ajoutez les dépendances nécessaires.
+  - Cliquez sur "Finish" pour créer le projet.
+###### Remarque : 
+  - Il est important de savoir comment créer un projet Spring avec ces deux méthodes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
