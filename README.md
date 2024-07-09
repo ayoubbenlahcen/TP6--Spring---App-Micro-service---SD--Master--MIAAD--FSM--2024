@@ -7,3 +7,8 @@ L'architecture de microservices décompose les applications en petits services i
   - SOAP : Basé sur XML pour des communications sécurisées et transactionnelles.
 
 Ces technologies offrent une flexibilité accrue, facilitent les mises à jour et permettent une scalabilité indépendante de chaque composant.
+
+###### Remarque :
+  - Jusqu'à maintenant, nous avons utilisé Spring MVC classique impératif.
+  - Il existe un autre modèle appelé Spring Reactive (Spring WebFlux).
+  - Nous verrons par la suite la différence entre eux.
