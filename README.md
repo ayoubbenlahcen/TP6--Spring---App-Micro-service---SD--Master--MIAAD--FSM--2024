@@ -116,39 +116,38 @@ Alors comme on peut le voir, les données de notre compte sont ici sous forme JS
 Afin d'enregistrer les données, notre API REST nous a retourné les informations du nouveau compte enregistré.
 
 4-	Mise a jours d’un compte : 
-Par exemple je dois changer les information du compte enregistrer :
+Par exemple, pour modifier les informations du compte enregistré :
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/5ebd22ac-6a8a-4dcd-8ee5-113f53b31a41)
-  ==> ca est l’etat  du compte avant ma mise a jours 
+  ==> Ca est l’etat  du compte avant ma mise a jours 
   
 Apres la modification : 
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/8ec4acba-69ab-4568-b6ba-5c22da53b128)
 
-5-	On peut aussi tester la suppression si en veut
+5-	On peut aussi tester la suppression si nécessaire.
 
-Alors jusqu’à maintenant on peut dire que on a uns idée  c’est quoi  un web service rest full
-Et alors mon Rest peux communiquer avec le monde extérieur  via un Rest Api .
+Jusqu'à présent, nous pouvons dire que nous avons une idée de ce qu'est un service web RESTful. Mon REST peut communiquer avec le monde extérieur via une API REST.
 
 Remarque : 
-Dans la pratique le rest Api n’est pas documente  alors la meilleur façon pour document les rest Api   en utilisant Spring c’est de faire la documentation swagger  alors pour faire ca on est besoin de faire ajouter une dépendance  qui s’apple sping boot openapi comme suite : 
+En pratique, la documentation des APIs REST n'est pas toujours documentée. La meilleure façon de documenter les APIs REST avec Spring est d'utiliser Swagger. Pour cela, nous devons ajouter une dépendance appelée spring-boot-starter-<VERSION>-openapi comme suit :
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/106d8be3-d52b-417c-8769-97427bd153da)
 
-Juste a savoir que  dans cette documentation a comme nom dans la premeir version  1 et 2 swagger et dans la version 3 il a pris comme nom  openapi  . c’est-à-dire la documentation openApi.
+Il est bon de savoir que dans les premières versions 1 et 2, la documentation s'appelait Swagger, tandis que dans la version 3, elle est renommée en OpenAPI, c'est-à-dire la documentation OpenAPI.
 
 Alors si je veux accéder a cette documentation je dois faire dans le URL : 
 localhost:8081/swagger-ui/index.html
 ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/2c7fb779-d560-417d-98be-4f6242f07b36)
 
-Alors voici qu’est-ce que j’ai comme résultat afin de faire taper ça dans URL : 
+Pour accéder à la documentation générée par Swagger/OpenAPI dans votre application Spring Boot, vous devez généralement ajouter /swagger-ui.html ou /swagger-ui/index.html à l'URL de votre application. Voici comment cela pourrait ressembler : 
  
-Alors en realite c’est quoi la doccumentation OpenApi ?
+Alors en realite c’est quoi la documentation OpenApi ?
 
 Si on on a cliquer sur lien : /v3/api-docs 
 On voir comme resulats ca : 
  ![image](https://github.com/ayoubbenlahcen/TP6--Spring---App-Micro-service---SD--Master--MIAAD--FSM--2024/assets/152870306/4d036077-ad94-4926-ad96-e559eb905f99)
 
-Alors comme on vois que une cette page contient un ensemble des données JSON  qui décrit nos rest Api  tel que il contient le path vers  ces rests api aussi le nom de la methode qui va être appeler et aussi les out put …
+Dans cette page, vous trouverez un ensemble de données JSON qui décrit nos APIs REST, y compris le chemin vers ces APIs, le nom des méthodes qui seront appelées, ainsi que les sorties (outputs).
 
-Alors dans ce document on trouve les déférent int point et qu’il sont les inputs et aussi les outputs pour chaque rest Api .
+Ce document détaille les différents points d'entrée, les inputs nécessaires, et les outputs pour chaque API REST.
 
 Avec ca on peut tester facilement notre rest .
 
